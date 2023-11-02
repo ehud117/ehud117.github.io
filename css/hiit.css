@@ -1,0 +1,53 @@
+[contenteditable]:focus {
+	outline: 0px;
+}
+[placeholder]:empty:before {
+	content: attr(placeholder);
+}
+
+#edit_title:empty:before {
+	color: deepskyblue;
+}
+#edit_title {
+	background: lightblue;
+	color: darkblue;
+	font-size: 60px;
+	border-radius: 15px;
+	padding: 10px;
+	padding-right: 20px;
+	width: fit-content;
+	margin-bottom: 10px;
+}
+
+#workout {
+	width: fit-content;
+}
+@media only screen and (max-width: 1500px) {
+  #workout {
+    width: initial;
+  }
+}
+
+.exercise {
+	padding: 10px;
+	border-radius: 15px;
+	border: 3px solid black;
+	margin-bottom: 5px;
+}
+
+.exercise_name:empty:before {
+	color: lightseagreen;
+}
+.exercise_name {
+	background: lightgreen;
+	margin-bottom: 10px;
+	color: #023020;  /* darkgreen */
+	font-size: 50px;
+	border-radius: 10px;
+	padding: 5px;
+	padding-right: 20px;
+	width: fit-content;
+}
+.spacer {
+	width: 10px;
+}
