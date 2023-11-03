@@ -11,6 +11,7 @@
 	<div id="edit_title" 
 		onkeyup="title_keyup(event)" 
 		contenteditable=true
+		autocapitalize=words
 		rejectsnewlines
 		placeholder="Title - Click to edit..."></div>
 	<div id="workout">
@@ -18,14 +19,16 @@
 			<div class="exercise_name" 
 				contenteditable=true
 				rejectsnewlines
+				autocapitalize=words
 				placeholder="Exercise name..."></div>
-			<div class="duration" 
-				contenteditable=true
-				timeduration
-				placeholder="10"></div>
+			<input type="number"></input>
 		</div>
 		<div class="exercise">
-			<div class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name...">Figure 8</div>
+			<div class="exercise_name" 
+				autocapitalize=words
+				contenteditable="true" 
+				rejectsnewlines 
+				placeholder="Exercise name...">Figure 8</div>
 			<table>
 				<tr>
 					<td class="exercise_name" name..." style="background: lightgray;">Duration </td>
@@ -40,7 +43,11 @@
 			</table>
 		</div>
 		<div class="exercise">
-			<div class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name...">Climber pendulum</div>
+			<div class="exercise_name" 
+				contenteditable="true" 
+				autocapitalize=words
+				rejectsnewlines="" 
+				placeholder="Exercise name...">Climber Pendulum</div>
 			<table>
 				<tr>
 					<td class="exercise_name" name..." style="background: lightgray;">Duration </td>
