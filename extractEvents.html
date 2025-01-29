@@ -1,0 +1,69 @@
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="css/hiit.css">
+	<title id="title">HIIT workout generator</title>
+</head>
+
+<body>
+	<div id="edit_title" 
+		onkeyup="title_keyup(event)" 
+		contenteditable=true
+		autocapitalize=words
+		rejectsnewlines
+		placeholder="Title - Click to edit..."></div>
+	<div id="workout">
+		<div class="exercise">
+			<div class="exercise_name" 
+				contenteditable=true
+				rejectsnewlines
+				autocapitalize=words
+				placeholder="Exercise name..."></div>
+			<input type="number"></input>
+		</div>
+		<div class="exercise">
+			<div class="exercise_name" 
+				autocapitalize=words
+				contenteditable="true" 
+				rejectsnewlines 
+				placeholder="Exercise name...">Figure 8</div>
+			<table>
+				<tr>
+					<td class="exercise_name" name..." style="background: lightgray;">Duration </td>
+					<td class="spacer"></td>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style="background: green; color: white; ">45</td> 
+				</tr>
+				<tr>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style=" background: lightgray; ">Rest </td>
+					<td class="spacer"></td>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style=" background: red; color: white; ">15</td>
+				</tr>
+			</table>
+		</div>
+		<div class="exercise">
+			<div class="exercise_name" 
+				contenteditable="true" 
+				autocapitalize=words
+				rejectsnewlines="" 
+				placeholder="Exercise name...">Climber Pendulum</div>
+			<table>
+				<tr>
+					<td class="exercise_name" name..." style="background: lightgray;">Duration </td>
+					<td class="spacer"></td>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style="background: green; color: white; ">45</td> 
+				</tr>
+				<tr>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style=" background: lightgray; ">Rest </td>
+					<td class="spacer"></td>
+					<td class="exercise_name" contenteditable="true" rejectsnewlines="" placeholder="Exercise name..." style=" background: red; color: white; ">15</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<script src="hiit.js"></script>
+</body>
+</html>
+
+
