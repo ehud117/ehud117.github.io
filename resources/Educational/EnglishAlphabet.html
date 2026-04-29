@@ -194,6 +194,28 @@
 
 			let chosenVoice = null;
 
+			// Spoken letter names. Some TTS engines announce a bare uppercase
+			// letter as "Capital A" / "Capital B"; sending the phonetic name
+			// avoids that and is read consistently across voices.
+			const LETTER_NAMES = {
+				A: 'ay', B: 'bee', C: 'see', D: 'dee', E: 'ee', F: 'eff',
+				G: 'jee', H: 'aitch', I: 'eye', J: 'jay', K: 'kay', L: 'el',
+				M: 'em', N: 'en', O: 'oh', P: 'pee', Q: 'cue', R: 'are',
+				S: 'ess', T: 'tee', U: 'you', V: 'vee', W: 'double you',
+				X: 'ex', Y: 'why', Z: 'zee'
+			};
+
+			function letterNameFor(upper) {
+				if (upper === 'Z') {
+					const lang = (chosenVoice && chosenVoice.lang) || '';
+					// "zed" everywhere except North America.
+					if (!/^en-(US|CA)\b/i.test(lang)) {
+						return 'zed';
+					}
+				}
+				return LETTER_NAMES[upper] || upper;
+			}
+
 			// Pretty-print a BCP-47 tag like "en-GB" as "English (United Kingdom)"
 			// when the browser supports Intl.DisplayNames; otherwise return the tag.
 			let langDisplay = null;
@@ -342,7 +364,7 @@
 					cell.appendChild(glyphs);
 
 					cell.addEventListener('click', function () {
-						speakText(upper);
+						speakText(letterNameFor(upper));
 						flashPlaying(cell);
 					});
 
@@ -361,7 +383,7 @@
 				});
 
 				previewBtn.addEventListener('click', function () {
-					speakText('A B C');
+					speakText(letterNameFor('A') + ', ' + letterNameFor('B') + ', ' + letterNameFor('C'));
 				});
 
 				// Voices load asynchronously on most browsers; the first call to
